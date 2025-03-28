@@ -79,22 +79,65 @@
 
 // ----------------------------------promises-------------------------
 
-const Getpromise = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("i am promise");
-      resolve("success");
-      //   reject("Network error");
-    }, 3000);
-  });
-};
-Getpromise()
-  .then((res) => {
-    console.log("promise fullfiled", res);
-    Getpromise().then((res) => {
-      console.log("promise 1 fullfiled", res);
-    });
-  })
-  .catch((rej) => {
-    console.log("error", rej);
-  });
+// const Getpromise = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("i am promise");
+//       resolve("success");
+//       //   reject("Network error");
+//     }, 3000);
+//   });
+// };
+// Getpromise()
+//   .then((res) => {
+//     console.log("promise fullfiled", res);
+//     Getpromise().then((res) => {
+//       console.log("promise 1 fullfiled", res);
+//     });
+//   })
+//   .catch((rej) => {
+//     console.log("error", rej);
+//   });
+
+//------------------3rd Day------------------------------
+
+// const express = require("express");
+// const app = express();
+
+// app.get("/", (req, res) => {
+//   console.log("data from req is -->>", req.query);
+//   res.send("Home page");
+// });
+
+// app.get("/about", (req, res) => {
+//   res.send("about page");
+// });
+
+// app.get("/contact", (req, res) => {
+//   res.send("contact page");
+// });
+
+// app.listen(4000, () => {
+//   console.log("server is running on port 4000");
+// });
+
+// const express = require("express");
+// const app = express();
+
+// app.get("/", (req, res) => {
+//   res.send(`<h1>Welcome to Home page</h1>         <a href="/about">About</a>`);
+// });
+
+// app.get("/about", (req, res) => {
+//   res.send(
+//     `<h>Welcome to About page</h><br/> <input type="text" value="${req.query.name}" placeholder="Enter your name">`
+//   );
+// });
+
+// app.get("/contact", (req, res) => {
+//   res.send("contact page");
+// });
+
+// app.listen(4000, () => {
+//   console.log("server is running on port 4000");
+// });
