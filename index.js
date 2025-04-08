@@ -141,3 +141,82 @@
 // app.listen(4000, () => {
 //   console.log("server is running on port 4000");
 // });
+
+//---------------------4th day----------------------------
+
+// const express = require("express");
+// const app = express();
+// const path = require("path");
+
+// const pathname = path.join(__dirname);
+
+// app.get("/", (req, res) => {
+//   res.send("helo home page");
+// });
+// app.get("/about", (req, res) => {
+//   res.sendFile(`${pathname}/about.html`);
+// });
+// app.listen(4000, () => {
+//   console.log("server is running on port 4000");
+// });
+
+//-----ejs template engine---------
+
+// const express = require("express");
+// const app = express();
+// const path = require("path");
+
+// const pathname = path.join(__dirname);
+// app.set("view engine", "ejs");
+
+// app.get("/", (req, res) => {
+//   res.send("helo home page");
+// });
+// app.get("/profile", (req, res) => {
+//   const user = {
+//     name: "azran",
+//     age: 22,
+//     city: "islamabad",
+//     skill: ["html", "css", "java", "C"],
+//   };
+//   res.render("profile", { user });
+// });
+// app.get("/about", (req, res) => {
+//   res.sendFile(`${pathname}/about.html`);
+// });
+// app.listen(4000, () => {
+//   console.log("server is running on port 4000");
+// });
+
+// -----------middleware----------------
+
+const express = require("express");
+const app = express();
+
+const middle = (req, res, next) => {
+  if (!req.query.age) {
+    res.send("enter your age");
+  } else if (req.query.age < 18) {
+    res.send("you cant access the website");
+    next();
+  } else {
+    next();
+  }
+};
+
+app.use(middle);
+app.get("/", (req, res) => {
+  res.send(`<h1>Welcome to Home page</h1>    `);
+});
+
+app.get("/about", (req, res) => {
+  res.send("about");
+});
+
+app.get("/contact", (req, res) => {
+  res.send("contact page");
+});
+
+app.listen(4000, () => {
+  console.log("server is running on port 4000");
+});
