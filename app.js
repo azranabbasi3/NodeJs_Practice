@@ -5,6 +5,7 @@
 //     return 5+7;
 //   },
 // };
+
 export const add = ()=>{
     return 5 + 7;
 }
