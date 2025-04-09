@@ -4,14 +4,14 @@ const insert = async () => {
   const db = await dbconnect();
   const reult = await db.insertMany([
     {
-      name: "vivo",
-      price: 52000,
-      color: "orange",
+      name: "tecno",
+      price: 5000,
+      color: "blue",
     },
     {
       name: "Q-mobile",
-      price: 5100,
-      color: "orange",
+      price: 5900,
+      color: "voilet",
     },
   ]);
   if (reult.acknowledged) {
